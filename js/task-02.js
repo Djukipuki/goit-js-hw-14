@@ -9,11 +9,15 @@ const ingredients = [
 
 const ingredientList = document.getElementById('ingredients');
 
-ingredients.forEach(ingredientName => {
+const ingredientItemsFragment = document.createDocumentFragment();
+
+ingredients.forEach(function(ingredient) {
     const newIngredient = document.createElement('li');
 
-    newIngredient.textContent = ingredientName;
+    newIngredient.textContent = ingredient;
     newIngredient.classList.add('item');
 
-    ingredientList.appendChild(newIngredient);
+    ingredientItemsFragment.appendChild(newIngredient);
 });
+
+ingredientList.appendChild(ingredientItemsFragment);
